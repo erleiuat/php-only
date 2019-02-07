@@ -1,0 +1,23 @@
+:root {
+    --primary: #1976d2;
+    --primary-dark: #004ba0;
+    --primary-light: #63a4ff;
+    --bg: #0b0b0b;
+    --bg-light: #282828;
+    --font: #edecec;
+}
+h1, h2, h3, h4, h5, p {
+    margin: 0px;
+    color: var(--font);
+    font-family: sans-serif;
+}
+body {
+    margin: 0px;
+    background-color: var(--bg);
+}
+/* Default Config Done */
+
+.container {
+    width: 100%;
+    min-height:200px;
+}
