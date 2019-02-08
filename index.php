@@ -10,46 +10,28 @@
 
     <!-- Stylessheets -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/content.css" />
-    <link rel="stylesheet" href="css/footer.css" />
 
 </head>
 <body>
     <div class="container">
+        <?php include('components/header/index.php') ?>
 
-        <div class="header">
-            <div class="header-title">
-                <h1>Onlineshop</h1>
-            </div>
-            <div class="header-content">
-                <div class="header-items">
-                    <ul>
-                        <li><a href="default.asp">Home</a></li>
-                        <li><a href="news.asp">News</a></li>
-                        <li><a href="contact.asp">Contact</a></li>
-                        <li><a href="about.asp">About</a></li>
-                    </ul>
-                </div>
-                <div class="header-icons">
-                    <ul>
-                        <li><a href="default.asp">A</a></li>
-                        <li><a href="news.asp">B</a></li>
-                        <li><a href="contact.asp">C</a></li>
-                        <li><a href="about.asp">D</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="content">
-            <h1>Pagetitle</h1>
-        </div>
-        <div class="footer">
-            <p>
-                Footer-Text
-            </p>
+            <?php
+
+                if(isset($_GET['page'])){
+                    include('views/'.$_GET['page'].'.php');
+                } else if(isset($_GET['item'])){
+                    include('views/item.php');
+                } else {
+                    include('views/home.php');
+                }
+
+            ?>
         </div>
 
+        <?php include('components/footer/index.php') ?>
     </div>
 </body>
 </html>

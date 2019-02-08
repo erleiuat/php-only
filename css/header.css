@@ -34,12 +34,15 @@
     float: left;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header-items li a {
     display: block;
     color: var(--font);
     text-align: center;
     padding: 23px 20px;
-    text-decoration: none;
     font-family: sans-serif;
 }
 
@@ -64,11 +67,15 @@
     float: left;
 }
 
+.header-icons img {
+    width: 24px;
+}
+
 .header-icons li a {
     display: block;
     color: var(--font);
     text-align: center;
-    padding: 23px 20px;
+    padding: 18px 20px;
     text-decoration: none;
     font-family: sans-serif;
 }
