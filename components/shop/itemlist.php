@@ -27,7 +27,16 @@ if($items->rowCount()>0){
         </div>
         <div class='card-container'>
         <h4><b>".$title."</b></h4>
+        <div class='item-details'>
+        <div class='stars-container'>
+        <img src='media/icons/stars/full.png' alt='Star'>
+        <img src='media/icons/stars/full.png' alt='Star'>
+        <img src='media/icons/stars/full.png' alt='Star'>
+        <img src='media/icons/stars/full.png' alt='Star'>
+        <img src='media/icons/stars/full.png' alt='Star'>
+        </div>
         <p>".$price.".-</p>
+        </div>
         </div>
         </div>
         </a>
@@ -67,8 +76,23 @@ if($items->rowCount()>0){
 
 <style>
 
-    select#soflow {
+    .item-details p {
+        float: left;
+    }
+    .item-details b {
+        float: left;
+        color: var(--font);
+        font-family: sans-serif;
+    }
+    .stars-container {
+        width: 100%;
+        float: left;
+    }
+    .stars-container img {
+        width: 20px;
+    }
 
+    select#soflow {
         border-radius: 2px;
         background-color: var(--primary);
         background-position: 97% center;
@@ -103,7 +127,7 @@ if($items->rowCount()>0){
         cursor: pointer;
     }
 
-    .card img {
+    .imageContainer img {
         top: 50%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
@@ -118,7 +142,7 @@ if($items->rowCount()>0){
     }
 
     .card-container {
-        padding: 12px 16px;
+        padding: 14px 16px;
     }
     .shop-items {
         display:inline;
