@@ -9,4 +9,26 @@ if(isset($_GET['category'])){
 }
 ?>
 
-<link rel="stylesheet" href="./css/shop.css" />
+<style>
+.sidenav {
+    min-height: 200px;
+    width: 20%;
+    float: left;
+    padding-top: 10px;
+}
+.sidenav a {
+    text-decoration: none;
+    color: var(--font);
+    font-family: sans-serif;
+}
+
+.shop-items {
+    min-height: 200px;
+    width: 80%;
+    padding-top: 10px;
+}
+
+.flaoters{
+    display:inline-block;
+}
+</style>

@@ -1,17 +1,25 @@
 <?php
 
-    
+include_once './include/database.php';
+$database = new Database();
+$subcats = $database->readSubcategory($_GET['category']);
+$subcat_list = "<li><a href='?page=shop&category=".$_GET['category']."'>All</a></li>";
+
+if($subcats->rowCount()>0){
+    while ($row = $subcats->fetch(PDO::FETCH_ASSOC)) {
+
+        extract($row);
+        $subcat_list .= "
+        <li><a href='?page=shop&category=".$_GET['category']."&subcategory=".$id."'>".$title." (".$itemcount.")</a></li>
+        ";
+
+    }
+}
 
 ?>
 
 <div class="sidenav flaoters">
     <ul>
-        <li><a href="?page=shop&category=shoes">Shoes</a>
-            <ul>
-                <li><a href="?page=shop&category=shoes&subcategory=nike">Nike</a></li>
-                <li><a href="?page=shop&category=shoes&subcategory=adidas">Adidas</a></li>
-                <li><a href="?page=shop&category=shoes&subcategory=others">Others</a></li>
-            </ul>
-        </li>
+        <?php echo $subcat_list; ?>
     </ul>
 </div>
